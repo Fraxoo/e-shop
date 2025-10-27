@@ -1,0 +1,15 @@
+:root{
+    --primay-color: #0f1218;
+    --seconday-color: #13171c;
+    --orange: #f97316;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    color:  white;
+}
+
+body{
+    background-color: var(--primay-color);
+}
