@@ -24,6 +24,11 @@ body {
     margin: 1rem;
 }
 
+.nav-link{
+    text-decoration: none;
+    color: black;
+}
+
 .product-card {
     display: flex;
     flex-direction: column;
@@ -36,7 +41,7 @@ body {
     display: block;
     width: 100%;
     background-color: white;
-    border-radius: 1rem;
+    border-radius: 0.9rem;
 }
 
 .product-card-img {
