@@ -4,6 +4,8 @@ import { useFetch } from "../hooks/useFetch"
 import { useEffect, useState } from "react";
 import { Product } from "../models/productModel";
 import Loading from "../components/loading";
+import ProductCard from "../components/productCard";
+import ProductGrid from "../components/productGrid";
 
 
 
@@ -20,6 +22,7 @@ export default function Home() {
             product.description,
             product.category,
             product.price,
+            product.rating,
             product.brand,
             product.tags,
             product.availabilityStatus,
@@ -36,13 +39,14 @@ export default function Home() {
 
     if (loading) {
         return (
-            <Loading/>
+            <Loading />
         );
-        
+
     } else {
         return (
-            <div>
+            <div className="main">
                 <Header />
+                <ProductGrid products={products}/>
             </div>
         )
     }
