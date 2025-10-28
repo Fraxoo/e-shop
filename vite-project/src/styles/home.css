@@ -1,15 +1,14 @@
-:root{
-    --primay-color: #0f1218;
-    --seconday-color: #13171c;
-    --orange: #f97316;
+:root {
+    --primay-color: white;
+    --seconday-color: #fe624c;
 }
 
-*{
+* {
     padding: 0;
     margin: 0;
-    color:  white;
+    font-family: "Inter", sans-serif;
 }
 
-body{
+body {
     background-color: var(--primay-color);
 }
