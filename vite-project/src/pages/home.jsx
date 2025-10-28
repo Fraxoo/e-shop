@@ -3,16 +3,18 @@ import "../styles/home.css"
 import { useFetch } from "../hooks/useFetch"
 import { useEffect, useState } from "react";
 import { Product } from "../models/product";
+import Loading from "../components/loading";
 
 
-export default function Home(){
 
-    const {data,loading } = useFetch(`https://dummyjson.com/products?limit=100`);
-    const [products,setProducts] = useState([])
-    
+export default function Home() {
+
+    const { data, loading } = useFetch(`https://dummyjson.com/products?limit=100`);
+    const [products, setProducts] = useState([])
+
 
     useEffect(() => {
-        const productsData = data.map((product) => new Product( 
+        const productsData = data.map((product) => new Product(
             product.id,
             product.title,
             product.description,
@@ -24,22 +26,21 @@ export default function Home(){
             product.reviews,
             product.images
         ));
-            setProducts(productsData)
-    },[data])
-    
+        setProducts(productsData)
+    }, [data])
+
     useEffect(() => {
         console.log(products);
-    },[products])
+    }, [products])
 
 
-    if(loading) {
-        return(
-            <div>
-                <p>Loading...</p>
-            </div>
-        )
+    if (loading) {
+        return (
+            <Loading/>
+        );
+        
     } else {
-        return(
+        return (
             <div>
                 <Header />
             </div>
