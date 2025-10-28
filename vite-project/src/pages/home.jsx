@@ -2,7 +2,7 @@ import Header from "../components/header"
 import "../styles/home.css"
 import { useFetch } from "../hooks/useFetch"
 import { useEffect, useState } from "react";
-import { Product } from "../models/product";
+import { Product } from "../models/productModel";
 import Loading from "../components/loading";
 
 
