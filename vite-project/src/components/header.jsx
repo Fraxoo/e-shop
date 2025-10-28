@@ -1,11 +1,14 @@
+import "../styles/header.css"
+
+
 export default function Header() {
     return (
         <div className="header">
             <div className="header-top">
                 <h1>e-shop<span id="secondary">.</span></h1>
                 <div className="header-top-right">
-                    <i class="fa-regular fa-user"></i>
-                    <i class="fa-solid fa-cart-shopping"></i>
+                    <i className="fa-regular fa-user"></i>
+                    <i className="fa-solid fa-cart-shopping"></i>
                 </div>
             </div>
             <div className="header-bottom">
