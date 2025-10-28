@@ -32,9 +32,7 @@ export default function Home() {
         setProducts(productsData)
     }, [data])
 
-    useEffect(() => {
-        console.log(products);
-    }, [products])
+
 
 
     if (loading) {
