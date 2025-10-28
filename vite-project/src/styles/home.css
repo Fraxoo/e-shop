@@ -9,6 +9,55 @@
     font-family: "Inter", sans-serif;
 }
 
+.desktop {
+    display: none;
+}
+
 body {
     background-color: var(--primay-color);
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+    justify-content: center;
+    margin: 1rem;
+}
+
+.product-card {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+    gap: 0.5rem;
+    width: 10rem;
+}
+
+.product-card img {
+    display: block;
+    width: 100%;
+    background-color: white;
+    border-radius: 1rem;
+}
+
+.product-card-img {
+    padding: 0.3rem;
+    background-color: rgb(128, 128, 128, 0.1);
+    border-radius: 1rem;
+}
+
+.product-card:hover {
+    box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+}
+
+.product-card-bottom {
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card h2 {
+    font-size: 1.1rem;
+}
+
+.product-card h1 {
+    font-size: 1.3rem;
 }

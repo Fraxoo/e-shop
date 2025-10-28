@@ -11,7 +11,7 @@ export default function Header() {
                     <i className="fa-solid fa-cart-shopping"></i>
                 </div>
             </div>
-            <div className="header-bottom">
+            <div className="header-bottom mobile">
                 <button type="button">
                     <i className="fa-solid fa-magnifying-glass"></i>
                 </button>
