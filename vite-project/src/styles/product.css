@@ -86,6 +86,13 @@
     margin: 1rem;
 }
 
+.product-page-info h4 {
+    text-decoration: underline;
+}
+
+.star-rating{
+    color: var(--seconday-color);
+}
 
 
 
