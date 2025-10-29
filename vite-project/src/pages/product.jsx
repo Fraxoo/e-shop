@@ -51,7 +51,7 @@ export default function ProductPage() {
     } else {
         return (
             <div>
-                <ProductGallery product={product} index={index} setIndex={setIndex}/>
+                {product && <ProductGallery product={product} index={index} setIndex={setIndex} />}
             </div>
         )
     }
