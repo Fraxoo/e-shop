@@ -3,7 +3,8 @@ import { Product } from "../../models/productModel";
 
 
 
-export default function ProductGallery({ product, index }) {
+
+export default function ProductGallery({ product, index , setIndex}) {
 
 
 
@@ -27,13 +28,12 @@ export default function ProductGallery({ product, index }) {
                                 );
                             } else {
                                 return (
-                                    <div key={i}>
+                                    <div onClick={() => setIndex(i)} key={i}>
                                         <img src={image} alt={product.title} />
                                     </div>
                                 );
                             }
                         })}
-
                     </div>
                 </div>
 
