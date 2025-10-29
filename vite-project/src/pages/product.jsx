@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 import { useFetch } from "../hooks/useFetch";
 import { Product } from "../models/productModel";
 import Loading from "../components/loading";
+import ProductGallery from "../components/product/productGallery";
+import "../styles/product.css"
 
 
 
@@ -11,10 +13,11 @@ export default function ProductPage() {
     const { id } = useParams();
     const idNumber = Number(id);
 
-
     const { data, loading } = useFetch(`https://dummyjson.com/products/${idNumber}`);
 
-    const [product, setProduct] = useState([]);
+    const [product, setProduct] = useState(null);
+
+    const [index,setIndex] = useState(0)
 
     useEffect(() => {
         console.log(product);
@@ -22,6 +25,7 @@ export default function ProductPage() {
     }, [product])
 
     useEffect(() => {
+        if(!data || !data.id || !data.images)return;
         const productData = new Product(
             data.id,
             data.title,
@@ -47,7 +51,7 @@ export default function ProductPage() {
     } else {
         return (
             <div>
-                <p>yo</p>
+                <ProductGallery product={product} index={index}/>
             </div>
         )
     }

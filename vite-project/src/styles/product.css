@@ -1,0 +1,36 @@
+
+.product-gallery{
+    display: flex;
+    flex-direction: column;
+}
+
+.product-gallery-bottom{  
+    display: flex;
+    align-items: center;
+    margin: 1rem;
+}
+
+.product-gallery-bottom img {
+    width: 5rem;
+    height: auto;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    object-fit: cover;
+}
+
+.product-gallery-focus{
+    border: 2px solid black;
+    border-radius: 1rem;
+}
+
+
+.product-gallery-full{
+    
+    display: flex;
+    justify-content: center;
+}
+
+.product-gallery-full img {
+    width: 100%;
+}
+
