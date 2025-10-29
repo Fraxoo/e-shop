@@ -6,8 +6,6 @@ import { Product } from "../../models/productModel";
 
 export default function ProductGallery({ product, index , setIndex}) {
 
-
-
     if (!product || !product.images || product.images.length === 0) {
         return null;
     } else {
@@ -16,7 +14,13 @@ export default function ProductGallery({ product, index , setIndex}) {
             return (
                 <div className="product-gallery">
                     <div className="product-gallery-full">
+                        <button className="left-arrow">
+                            <i class="fa-solid arrow fa-angle-left"></i>
+                        </button>
                         <img src={product.images[index]} alt={product.title} />
+                        <button className="right-arrow">
+                            <i class="fa-solid arrow fa-angle-right"></i>
+                        </button>
                     </div>
                     <div className="product-gallery-bottom">
                         {product.images.map((image, i) => {
