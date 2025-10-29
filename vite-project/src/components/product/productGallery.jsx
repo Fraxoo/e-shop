@@ -5,14 +5,14 @@ import { Product } from "../../models/productModel";
 
 
 
-export default function ProductGallery({ product, index, setIndex }) {
+export default function ProductGallery({ product }) {
     const [length, setLength] = useState(0);
 
+    const [index, setIndex] = useState(0)
 
 
     useEffect(() => {
         setLength(product.images.length)
-        console.log(length);
 
     }, [product])
 
@@ -20,12 +20,10 @@ export default function ProductGallery({ product, index, setIndex }) {
         return (
             <div className="product-gallery">
                 <div className="product-gallery-full">
-                    <button onClick={() => setIndex((prev) => prev === 0 ? length - 1 : prev - 1)} className="left-arrow">
-                        <i className="fa-solid arrow fa-angle-left"></i>
+                    <button onClick={() => setIndex((prev) => prev === 0 ? length - 1 : prev - 1)} className="left-arrow">                        <i className="fa-solid arrow fa-angle-left"></i>
                     </button>
                     <img src={product.images[index]} alt={product.title} />
-                    <button onClick={() => setIndex((prev) => prev === length - 1 ? 0 : prev + 1)} className="right-arrow">
-                        <i className="fa-solid arrow fa-angle-right"></i>
+                    <button onClick={() => setIndex((prev) => prev === length - 1 ? 0 : prev + 1)} className="right-arrow">                        <i className="fa-solid arrow fa-angle-right"></i>
                     </button>
                 </div>
                 <div className="product-gallery-bottom">

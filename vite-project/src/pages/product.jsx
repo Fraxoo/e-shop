@@ -5,6 +5,7 @@ import { Product } from "../models/productModel";
 import Loading from "../components/loading";
 import ProductGallery from "../components/product/productGallery";
 import "../styles/product.css"
+import ProductInfo from "../components/product/productInfo";
 
 
 
@@ -17,7 +18,7 @@ export default function ProductPage() {
 
     const [product, setProduct] = useState(null);
 
-    const [index,setIndex] = useState(0)
+    const [index, setIndex] = useState(0)
 
     useEffect(() => {
         console.log(product);
@@ -25,7 +26,7 @@ export default function ProductPage() {
     }, [product])
 
     useEffect(() => {
-        if(!data || !data.id || !data.images)return;
+        if (!data || !data.id || !data.images) return;
         const productData = new Product(
             data.id,
             data.title,
@@ -50,8 +51,9 @@ export default function ProductPage() {
 
     } else {
         return (
-            <div>
-                {product && <ProductGallery product={product} index={index} setIndex={setIndex} />}
+            <div className="product-page">
+                {product && <ProductGallery product={product}/>}
+                {product && <ProductInfo product={product} />}
             </div>
         )
     }
