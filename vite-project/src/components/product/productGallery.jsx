@@ -36,7 +36,7 @@ export default function ProductGallery({ product }) {
                             );
                         } else {
                             return (
-                                <div onClick={() => setIndex(i)} key={i}>
+                                <div className="product-gallery-bottom-classic" onClick={() => setIndex(i)} key={i}>
                                     <img src={image} alt={product.title} />
                                 </div>
                             );
