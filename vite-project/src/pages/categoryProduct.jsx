@@ -6,13 +6,40 @@ import { Product } from "../models/productModel";
 import Loading from "../components/loading";
 import ProductGrid from "../components/productGrid";
 import Filter from "../components/filter";
+import { useParams } from "react-router-dom";
 
 
 
-export default function Home() {
+export default function CategoryProduct() {
+    const { category } = useParams()
 
-    const { data, loading } = useFetch(`https://dummyjson.com/products?limit=100`);
+    const { data, loading } = useFetch(`https://dummyjson.com/products/category/${category}`);
+
+
     const [products, setProducts] = useState([]);
+
+
+    useEffect(() => {
+        async function loadFetch(category) {
+
+            const productsData = data.map((product) => new Product(
+                product.id,
+                product.title,
+                product.description,
+                product.category,
+                product.price,
+                product.rating,
+                product.brand,
+                product.tags,
+                product.availabilityStatus,
+                product.reviews,
+                product.images
+            ));
+            setProducts(productsData);
+        }
+        loadFetch(category);
+
+    }, [data])
 
 
     useEffect(() => {
@@ -29,7 +56,7 @@ export default function Home() {
             product.reviews,
             product.images
         ));
-        setProducts(productsData);        
+        setProducts(productsData);
     }, [data])
 
 
@@ -45,9 +72,8 @@ export default function Home() {
             <div className="main">
                 <Header />
                 <Filter />
-                <ProductGrid products={products}/>
+                <ProductGrid products={products} />
             </div>
         )
     }
-
 }

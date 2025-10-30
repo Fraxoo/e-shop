@@ -14,7 +14,6 @@
     display: flex;
     align-items: center;
     gap: 1rem;
-    margin: 1rem;
 }
 
 .product-gallery-bottom-classic{
@@ -81,13 +80,15 @@
 
 .product-page{
     margin-bottom: 6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 .product-page-info{
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    margin: 1rem;
 }
 
 .product-page-info h4 {

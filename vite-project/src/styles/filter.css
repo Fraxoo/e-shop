@@ -32,6 +32,12 @@
     align-items: center;
 }
 
+.home-filter-button button {
+    background: none;
+    border: none;
+    width: fit-content;
+}
+
 .home-filter-top {
     display: flex;
     justify-content: space-between;

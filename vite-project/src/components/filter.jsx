@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { useFetch } from "../hooks/useFetch"
 import "../styles/filter.css"
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 
 export default function Filter({ setCategory }) {
@@ -11,7 +11,9 @@ export default function Filter({ setCategory }) {
 
     const [categoryToShow, setCategoryToShow] = useState([]);
 
-    const [selectedCategory, setSelectedCategory] = useState("All")
+    const { category } = useParams();
+
+    const [selectedCategory, setSelectedCategory] = useState([])
 
     useEffect(() => {
         const categorysData = data.map((d) => {
@@ -24,6 +26,15 @@ export default function Filter({ setCategory }) {
         setCategoryToShow(["All", ...categorys.slice(0, 5)]);
     }, [categorys])
 
+    useEffect(() => {
+        if (isNaN(category)) {
+            setSelectedCategory("All")
+        } else {
+            setSelectedCategory(category)
+
+        }
+    }, [category])
+
 
     return (
         <div className="home-filter">
@@ -31,23 +42,23 @@ export default function Filter({ setCategory }) {
                 <h3>Categories</h3>
                 <p>See All</p>
             </div>
+
             <div className="home-filter-button">
                 {categoryToShow.map((category, i) => {
-                    if (category === selectedCategory) {
-                        return (
-                            <Link key={i} className="selected-button" to={`category/${category}`}>
-                                <button>{category}</button>
-                            </Link>
-                        )
-                    } else {
-                        return (
-                            <Link key={i} className="not-selected-button" to={`category/${category}`}>
-                                <button>{category}</button>
-                            </Link>
-                        )
-                    }
+                    const isSelected = category === selectedCategory;
+
+                    return (
+                        <Link
+                            key={i}
+                            to={category === "All" ? "/" : `/category/${category}`}
+                            className={isSelected ? "selected-button" : "not-selected-button"}
+                            onClick={() => setSelectedCategory(category)}
+                        >
+                            <button>{category}</button>
+                        </Link>
+                    );
                 })}
             </div>
         </div>
-    )
+    );
 }
