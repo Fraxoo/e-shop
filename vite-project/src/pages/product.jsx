@@ -6,6 +6,8 @@ import Loading from "../components/loading";
 import ProductGallery from "../components/product/productGallery";
 import "../styles/product.css"
 import ProductInfo from "../components/product/productInfo";
+import Header from "../components/header"
+import AddCart from "../components/product/addCart";
 
 
 
@@ -51,9 +53,13 @@ export default function ProductPage() {
 
     } else {
         return (
-            <div className="product-page">
-                {product && <ProductGallery product={product}/>}
-                {product && <ProductInfo product={product} />}
+            <div className="main">
+                <Header />
+                <div className="product-page">
+                    {product && <ProductGallery product={product} />}
+                    {product && <ProductInfo product={product} />}
+                </div>
+                <AddCart/>
             </div>
         )
     }

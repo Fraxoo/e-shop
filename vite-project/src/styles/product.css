@@ -76,7 +76,11 @@
 }
 
 .product-gallery-full img {
-    width: 100%;
+    width: 20rem;
+}
+
+.product-page{
+    margin-bottom: 6rem;
 }
 
 .product-page-info{
@@ -92,6 +96,34 @@
 
 .star-rating{
     color: var(--seconday-color);
+}
+.main{
+    display: flex;
+    flex-direction: column;
+}
+
+.add-cart {
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+border-top: 1px gray solid;
+  width: 100%;
+  padding: 1rem 1rem; /* on garde un espace intérieur */
+  background: white; /* facultatif si tu veux une bande visible */
+  box-sizing: border-box; /* pour que le padding ne fasse pas dépasser */
+}
+
+.add-cart-button{
+    background-color: var(--seconday-color);
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 1rem 0;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    width: 100%;
 }
 
 

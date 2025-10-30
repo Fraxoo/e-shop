@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import "../styles/header.css"
 
 
@@ -5,7 +6,9 @@ export default function Header() {
     return (
         <div className="header">
             <div className="header-top">
-                <h1>e-shop<span id="secondary">.</span></h1>
+                <Link className="link" to={"/"}>
+                    <h1>e-shop<span id="secondary">.</span></h1>
+                </Link>
                 <div className="header-top-right">
                     <i className="fa-regular fa-user"></i>
                     <i className="fa-solid fa-cart-shopping"></i>
