@@ -1,0 +1,38 @@
+:root {
+    --primay-color: white;
+    --seconday-color: #fe624c;
+}
+
+.home-filter {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.home-filter-button a {
+    padding: 0.5rem 1rem;
+    border-radius: 0.7rem;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.selected-button {
+    background-color: var(--seconday-color);
+    color: white;
+}
+
+.not-selected-button {
+    background-color: rgb(128, 128, 128, 0.1);
+}
+
+.home-filter-button {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.home-filter-top {
+    display: flex;
+    justify-content: space-between;
+}

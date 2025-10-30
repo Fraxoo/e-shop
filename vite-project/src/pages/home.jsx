@@ -4,15 +4,16 @@ import { useFetch } from "../hooks/useFetch"
 import { useEffect, useState } from "react";
 import { Product } from "../models/productModel";
 import Loading from "../components/loading";
-import ProductCard from "../components/productCard";
 import ProductGrid from "../components/productGrid";
+import Filter from "../components/filter";
 
 
 
 export default function Home() {
 
     const { data, loading } = useFetch(`https://dummyjson.com/products?limit=100`);
-    const [products, setProducts] = useState([])
+    const [products, setProducts] = useState([]);
+    const [category, setCategory] = useState([]);
 
 
     useEffect(() => {
@@ -29,7 +30,7 @@ export default function Home() {
             product.reviews,
             product.images
         ));
-        setProducts(productsData)
+        setProducts(productsData);        
     }, [data])
 
 
@@ -44,6 +45,7 @@ export default function Home() {
         return (
             <div className="main">
                 <Header />
+                <Filter setCategory={setCategory}/>
                 <ProductGrid products={products}/>
             </div>
         )

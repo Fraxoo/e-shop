@@ -22,11 +22,17 @@ body {
     background-color: var(--primay-color);
 }
 
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
-    place-items: center;
-    margin: 1rem;
+.main{
+    gap: 1rem;
+    margin: 0 1rem;
+}
+
+
+.product-flex {
+  display: flex;
+  justify-content: space-between; /* 1er à gauche, dernier à droite */
+  align-items: center; /* verticalement centré */
+  flex-wrap: wrap;
 }
 
 .nav-link{
@@ -37,9 +43,9 @@ body {
 .product-card {
     display: flex;
     flex-direction: column;
-    padding: 0.5rem;
     gap: 0.5rem;
     width: 10rem;
+    margin-bottom: 1rem;
 }
 
 .product-card img {
