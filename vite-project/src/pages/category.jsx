@@ -11,16 +11,20 @@ export default function CategoryPage() {
 
 
     useEffect(() => {
-        const categorysData = data.map((d) => {
-            return d.name
-        })
-        setCategorys(["All",...categorysData]);
+        const categorysData = data.map((d) => ({
+            name: d.name,
+            slugs: d.slugs
+        }));
+        setCategorys(["All", ...categorysData]);
+
     }, [data]);
 
     useEffect(() => {
         console.log(categorys);
-        
-    },[categorys])
+        console.log(categorys);
+
+
+    }, [categorys])
 
 
     return (
@@ -28,14 +32,14 @@ export default function CategoryPage() {
         <div className="main">
             <Header />
             <div className="category-page">
-            {categorys.map((category) => {
-                return(
-                <Link className="category-page-link" to={category === "All" ? "/" : `/category/${category}`}>
-                    <p>{category}</p>
-                </Link>
+                {categorys.map((category) => {
+                    return (
+                        <Link className="category-page-link" to={category.slugs === "All" ? "/" : `/category/${category.slugs}`}>
+                            <p>{category}</p>
+                        </Link>
 
-                )
-            })}
+                    )
+                })}
             </div>
         </div>
     )

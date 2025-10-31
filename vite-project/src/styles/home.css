@@ -31,7 +31,6 @@ body {
 .product-flex {
   display: flex;
   justify-content: space-between; /* 1er à gauche, dernier à droite */
-  align-items: center; /* verticalement centré */
   flex-wrap: wrap;
 }
 

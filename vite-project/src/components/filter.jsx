@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { useFetch } from "../hooks/useFetch"
 import "../styles/filter.css"
 import { Link, useParams } from "react-router-dom";
+import { Category } from "../models/categoryModel";
 
 
 export default function Filter({ setCategory }) {
@@ -16,9 +17,10 @@ export default function Filter({ setCategory }) {
     const [selectedCategory, setSelectedCategory] = useState([])
 
     useEffect(() => {
-        const categorysData = data.map((d) => {
-            return d.name
-        })
+        const categorysData = data.map((d) => new Category(
+            d.name,
+            d.slug
+        ))
         setCategorys(categorysData);
     }, [data]);
 

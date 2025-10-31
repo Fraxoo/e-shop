@@ -11,7 +11,8 @@ import Filter from "../components/filter";
 
 export default function Home() {
 
-    const { data, loading } = useFetch(`https://dummyjson.com/products?limit=100`);
+    const [page, setPage] = useState(1);
+    const { data, loading } = useFetch(`https://dummyjson.com/products?limit=20&skip=${(page - 1) * 20}`);
     const [products, setProducts] = useState([]);
 
 
@@ -32,7 +33,7 @@ export default function Home() {
         setProducts(productsData);        
     }, [data])
 
-
+    
 
 
     if (loading) {
