@@ -27,7 +27,7 @@ export default function Filter({ setCategory }) {
     }, [categorys])
 
     useEffect(() => {
-        if (isNaN(category)) {
+        if (!category) {
             setSelectedCategory("All")
         } else {
             setSelectedCategory(category)
@@ -40,7 +40,9 @@ export default function Filter({ setCategory }) {
         <div className="home-filter">
             <div className="home-filter-top">
                 <h3>Categories</h3>
-                <p>See All</p>
+                <Link to={`/category`}>
+                    <p>See All</p>
+                </Link>
             </div>
 
             <div className="home-filter-button">
@@ -54,8 +56,9 @@ export default function Filter({ setCategory }) {
                             className={isSelected ? "selected-button" : "not-selected-button"}
                             onClick={() => setSelectedCategory(category)}
                         >
-                            <button>{category}</button>
+                            {category}
                         </Link>
+
                     );
                 })}
             </div>

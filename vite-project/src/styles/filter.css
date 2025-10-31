@@ -15,6 +15,8 @@
     border: none;
     font-size: 1rem;
     cursor: pointer;
+    display: block;
+    
 }
 
 .selected-button {
@@ -24,6 +26,7 @@
 
 .not-selected-button {
     background-color: rgb(128, 128, 128, 0.1);
+    color: black;
 }
 
 .home-filter-button {
@@ -32,10 +35,8 @@
     align-items: center;
 }
 
-.home-filter-button button {
-    background: none;
-    border: none;
-    width: fit-content;
+.home-filter-button a {
+    text-decoration: none;
 }
 
 .home-filter-top {
