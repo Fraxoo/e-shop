@@ -30,16 +30,26 @@
 }
 
 .home-filter-button {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
 }
 
 .home-filter-button a {
-    text-decoration: none;
+  flex: 1; /* 💡 tous les boutons prennent la même largeur */
+  text-align: center;
+  padding: 0.6rem 1rem;
+  border-radius: 1rem;
+  white-space: nowrap;
+  text-decoration: none;
 }
 
 .home-filter-top {
     display: flex;
     justify-content: space-between;
+}
+
+.go-to-category{
+    color: gray;
+    text-decoration: none;
 }

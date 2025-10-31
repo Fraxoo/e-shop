@@ -40,7 +40,7 @@ export default function Filter({ setCategory }) {
         <div className="home-filter">
             <div className="home-filter-top">
                 <h3>Categories</h3>
-                <Link to={`/category`}>
+                <Link className="go-to-category" to={`/category`}>
                     <p>See All</p>
                 </Link>
             </div>
