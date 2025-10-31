@@ -7,7 +7,7 @@ export default function ProductInfo({ product }) {
         <div className="product-page-info">
             <h4>{product.brand}</h4>
             <h2>{product.title}</h2>
-            <p><StarRating value={product.rating}/></p>
+            <StarRating value={product.rating}/>
             <h1>${product.price}</h1>
             <h3>Descriptions</h3>
             <p>{product.description}</p>
